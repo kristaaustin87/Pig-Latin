@@ -1,2 +1,2 @@
 # Pig-Latin
-Pig Latin translator
+A Pig Latin translator I made for fun.
