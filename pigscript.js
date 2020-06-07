@@ -2,11 +2,8 @@
 document.getElementById("submit").addEventListener("click", function(){
     var message = document.getElementById("message").value;
     
-    /*Validate input by removing unwanted characters*/
-    message = message.replace(/</g, "");
-    message = message.replace(/>/g, "");
-    message = message.replace(/\\/g, "");
-      message = message.replace(/\//g, "");
+    /*remove special characters*/
+    message = message.replace(/[<>\\\/]/g, "");
     
     /*Split array by spaces*/
     var messageArray = message.split(" ");
@@ -35,6 +32,7 @@ document.getElementById("submit").addEventListener("click", function(){
     	/*add first letter +ay and, punctuation if it was there, to the end of the array*/	
     	if(punc == true){
     	wordArray.push(firstLetter, "a", "y", wordPunc);
+    	punc = false;
     	}
     	else{
     	wordArray.push(firstLetter, "a", "y");
